@@ -26,21 +26,23 @@ function broadcast(id, data, action) {
   }
 }
 
+function retrieveList(id, from, to) {
+  client.lrange(id, from, to, function(err, res) {
+    broadcast(id, res, 'list');
+  });
+}
+
 wss.on('connection', function(ws) {
   ws.on('message', function(message) {
     var json = JSON.parse(message);
     var id = shared.generateId(json["from"], json["to"]);
     if(shared.exists(json["message"])) {
       client.lpush(id, json["from"] + "|" + json["message"], function(err, res) {
-        client.lrange(id, 0, res, function(err, res) {
-          broadcast(id, res, 'list');
-        });
+        retrieveList(id, 0, res);
       });
     } else {
       client.llen(id, function(err, res) {
-        client.lrange(id, 0, res, function(err, res) {
-          broadcast(id, res, 'list');
-        });
+        retrieveList(id, 0, res);
       });
     }
   });
