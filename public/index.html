@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<script type="application/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="application/javascript" src="/js/jquery.cookie.js"></script>
+<script type="application/javascript" src="/js/shared.js"></script>	
+<script type="application/javascript" src="/js/love.js"></script>
+</head>
+
+
+<body>
+	<div id="logged-in"></div>
+	<h2>A conversation with your love...</h3>
+	<div id="messages"></div>
+	<div id="user-content">
+	<form name="userform" id="userform">
+	<div id="usererror"></div>
+	Before we start, I'd need some basic information about you
+	<div>what's your name?
+	<input type="text" name="name" id="name">
+	</div>
+	<div>who's your significant other?
+	<input type="text" name="to" id="to">
+	</div>
+	<br />
+	<input type="submit"  value="Submit">
+	</form>
+	</div>
+	<div id="dialog-content">
+	<div id="dialog-flash"></div>	
+	<form name="dialogform" id="dialogform">
+	<div id="dialogerror"></div>
+	<textarea rows="4" cols="50" name="message" id="message"></textarea>
+	<br />
+	<input type="submit" value="Submit">
+	</form>
+	</div>
+</body>
+
+
+
+</html>

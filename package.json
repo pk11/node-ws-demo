@@ -1,0 +1,30 @@
+{
+  "name": "love-ws",
+  "preferGlobal": "true",
+  "version": "0.1.0",
+  "author": "Peter Hausel <peter_kovac11@hotmail.com>",
+  "description": "love is everywhere",
+  "scripts": {
+    "start": "node love-ws.js"
+  },
+  "main": "./love-ws",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pk11/love-ws.git"
+  },
+  "keywords": [
+    "ws",
+    "sample",
+    "redis"
+  ],
+  "dependencies" : {
+    "redis": ">= 0.8.2",
+    "ws": ">= 0.4.23",
+    "node-static": ">= 0.6.5"
+  },
+  "analyze": false, 
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8.15"
+  }
+}
